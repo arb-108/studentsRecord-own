@@ -1,0 +1,12 @@
+ remove blur in windows forms c#
+===>add under the main class (ouside the class)
+
+[System. Runtime.InteropServices.DllImport("user32.dll")]
+private static extern bool SetProcessDPIAware();
+
+===>add inside the main class
+
+if(Environment.OSVersion.Version.Major >= 6)
+{
+SetProcessDPIAware();
+}
